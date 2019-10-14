@@ -1,0 +1,66 @@
+M//--------------------------------------------
+
+// Getting current months
+
+// Old way
+const months = [
+	"January",
+	"February",
+	"March",
+	"April",
+	"May",
+	"June",
+	"July",
+	"August",
+	"September",
+	"October",
+	"November",
+	"December"
+];
+
+let currentMonth = new Date().getMonth();
+
+// Better way
+const currentMonth = new Date().toLocaleString('en-us', { month: 'long' });
+console.log(currentMonth); // "September"
+
+// Or we can use Intl api
+const formatter = new Intl.DateTimeFormat('en', { month: 'long' });
+const currentMonth = formatter.format(new Date());
+console.log(currentMonth); // "September"
+
+//--------------------------------------------
+
+// appendChild()
+
+// Given the following HTML:
+/*
+	<div class="a">
+	    <span></span>
+	</div>
+	<div class="b"></div>
+*/
+// What would happen if you run the following JS:
+const span = document.querySelector('span'); 
+const divB = document.querySelector('.b'); 
+divB.appendChild(span);
+
+//--------------------------------------------
+
+// Complexity
+
+const isUnique = arr => {
+	let result = true;
+
+	for (let i = 0; i < arr.length; i++) {
+		for (let j = 0; j < arr.lenght; j++) {
+			if (i !== j && arr[i] === arr[j]) {
+				result = false;
+			}
+		}
+	}
+
+	return false;
+}
+
+//--------------------------------------------
